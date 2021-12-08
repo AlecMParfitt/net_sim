@@ -1,0 +1,3 @@
+node_host.png, Host, False
+node_switch.png, Switch, True
+node_server.png, Server, True

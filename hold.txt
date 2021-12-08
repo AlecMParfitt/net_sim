@@ -1,0 +1,7 @@
+    # show Node_Popup and get the node info from selected node name
+    # def add_node(self):
+         self.node_count += 1
+         inx = self.node_count
+         self.node_objects[inx] = Node_Frame(self.root)
+         x, y = self.get_canvas_dimensions()
+         self.node_objects[inx].place(x=x/2, y=y/2)

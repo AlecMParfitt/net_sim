@@ -109,7 +109,7 @@ class Window:
         self.canvas.pack
 
     def start_sim(self):
-        self.start_popup = Start_Popup(self.root, self.node_frames, self.link_line_objects)
+        self.start_popup = Start_Popup(self.canvas, self.node_frames, self.link_line_objects)
         self.start_button["state"] = "disabled"
         self.root.wait_window(self.start_popup.top)
         self.start_button["state"] = "normal"

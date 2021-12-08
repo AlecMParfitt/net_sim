@@ -1,3 +1,12 @@
+"""
+    main.py
+
+    Controller for net_sim project.
+
+    @author: Alec Parfitt
+"""
+
+
 from Window import Window
 import ctypes
 

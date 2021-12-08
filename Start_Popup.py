@@ -1,5 +1,6 @@
 from tkinter import *
 from Message import Message
+import time
 
 class Start_Popup:
     def __init__(self, parent, node_frames, link_line_objects):
@@ -49,7 +50,29 @@ class Start_Popup:
     def ok(self):
         self.start_node = self.node_frames[self.node_dict[self.start_var.get()]]
         self.end_node = self.node_frames[self.node_dict[self.end_var.get()]]
-        start_coords = self.start_node.get_coordinates()
+        
+        self.message = self.make_message(self.parent)
+        self.send_message(self.message, self.start_node.get_coordinates(), self.end_node.get_coordinates())
 
         packet_num = int(self.message_entry.get()) // int(self.packet_entry.get())
+
+    def make_message(self, parent):
+        start_x, start_y = self.start_node.get_coordinates()
+        end_x, end_y = self.end_node.get_coordinates()
+        return Message(self.parent, start_x = start_x, start_y = start_y)
+    
+    def send_message(self, message, start_coords, end_coords):
+        
+        start_x, start_y = start_coords
+        end_x, end_y = end_coords
+
+        current_x = start_x
+        current_y = start_y
+
+        while current_x != end_x or current_y != end_y:
+            message.move(end_x % 2, end_y % 2)
+            self.parent.update()
+            time.sleep(0.1)
+            
+        
 

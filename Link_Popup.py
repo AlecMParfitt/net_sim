@@ -34,10 +34,12 @@ class Link_Popup:
 
 
         self.start_label = Label(self.top, text="Start Node:")
+        self.start_label.pack()
         self.start_dropdown = OptionMenu(self.top, self.start_var, *self.node_names)
         self.start_dropdown.pack()
 
         self.end_label = Label(self.top, text="End Node:")
+        self.end_label.pack()
         self.end_dropdown = OptionMenu(self.top, self.end_var, *self.node_names)
         self.end_dropdown.pack()
 

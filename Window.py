@@ -8,6 +8,7 @@ from Node_Frame import Node_Frame
 from Node_Popup import Node_Popup
 from Link_Popup import Link_Popup
 from Link_Line import Link_Line
+from Start_Popup import Start_Popup
 #from Link_Line import Link_Line
 #from Link_Frame import Link_Frame
 #from Link import Link
@@ -108,7 +109,10 @@ class Window:
         self.canvas.pack
 
     def start_sim(self):
-        pass
+        self.start_popup = Start_Popup(self.root, self.node_frames, self.link_line_objects)
+        self.start_button["state"] = "disabled"
+        self.root.wait_window(self.start_popup.top)
+        self.start_button["state"] = "normal"
 
     def find_canvas_center(self):
         """
